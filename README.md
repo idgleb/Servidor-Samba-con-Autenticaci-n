@@ -98,7 +98,7 @@ sudo smbpasswd -a alfonso  # Establece una contraseña para alfonso
 
 ### 7. Configurar el Cortafuegos
 ```bash
-sudo ufw allow OpenSSH
+sudo ufw allow ssh
 sudo ufw allow Samba
 sudo ufw enable
 ```
