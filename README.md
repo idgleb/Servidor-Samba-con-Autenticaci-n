@@ -46,9 +46,11 @@ Durante la instalación:
        ens33:
          dhcp4: no
          addresses: [192.168.32.220/24]
-         gateway4: 192.168.32.1
-         nameservers:
-           addresses: [1.1.1.1, 8.8.8.8]
+       routes:                
+         - to: default
+           via: 192.168.32.1  
+      nameservers:
+        addresses: [1.1.1.1, 8.8.8.8]
    ```
 3. Aplica los cambios:
    ```bash
