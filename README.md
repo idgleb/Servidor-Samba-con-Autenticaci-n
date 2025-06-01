@@ -9,7 +9,7 @@ Guía paso a paso para configurar un recurso compartido seguro con autenticació
 | Componente | Especificación |
 |------------|---------------|
 | **Hipervisor** | VMware Workstation 14 (Pro) o superior |
-| **ISO Ubuntu** | Ubuntu Server 22.04 LTS (x64) |
+| **ISO Ubuntu** | Ubuntu Desktop 24.04.2 LTS |
 | **Recursos VM** | 2 vCPUs, 1 GB RAM, 20 GB disco |
 | **Red** | LAN con router DHCP (para modo puente) |
 
