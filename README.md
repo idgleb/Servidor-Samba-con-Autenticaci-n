@@ -134,8 +134,7 @@ smbclient //192.168.32.220/compartido -U alfonso
 | Problema | Comando de Ayuda |
 |----------|------------------|
 | **Credenciales rechazadas** | `sudo pdbedit -L` (lista usuarios de Samba) |
-| **Recurso no visible** | `testparm` (valida smb.conf) |
-| **Conexión lenta** | `sudo ethtool -K ens33 tx off` (desactiva offloading de checksum TX) |
+| **Hay conneccion abierta** | `net use * /delete /y` (Cerrar conexiones SMB abiertas) |
 
 ---
 
