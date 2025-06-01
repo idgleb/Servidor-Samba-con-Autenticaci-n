@@ -23,13 +23,7 @@ Guía paso a paso para configurar un recurso compartido seguro con autenticació
 3. Personaliza el hardware: Configura el **Adaptador de Red** en **Modo Puente**.
 4. En **Editar > Editor de Red Virtual**, asigna **VMnet0** al adaptador físico de tu PC (Wi-Fi/Ethernet).
 
-### 2. Instalar Ubuntu Server
-Durante la instalación:
-- **Usuario**: `gleb`
-- **Contraseña**: Establece una contraseña segura
-- **Instalar OpenSSH**: Sí
-
-### 3. Configurar IP Estática con Netplan
+### 2. Configurar IP Estática con Netplan
 1. Identifica tu interfaz de red:
    ```bash
    ip link  # Ejemplo: ens33
@@ -57,18 +51,18 @@ Durante la instalación:
    sudo netplan apply
    ```
 
-### 4. Instalar Samba
+### 3. Instalar Samba
 ```bash
 sudo apt update && sudo apt install samba smbclient -y
 ```
 
-### 5. Crear un Usuario Exclusivo para Samba
+### 4. Crear un Usuario Exclusivo para Samba
 ```bash
 sudo useradd -M -s /usr/sbin/nologin alfonso
 sudo smbpasswd -a alfonso  # Establece una contraseña para alfonso
 ```
 
-### 6. Configurar el Recurso Compartido Seguro
+### 5. Configurar el Recurso Compartido Seguro
 1. Crea el directorio compartido:
    ```bash
    sudo mkdir -p /srv/compartido
@@ -96,7 +90,7 @@ sudo smbpasswd -a alfonso  # Establece una contraseña para alfonso
    sudo systemctl restart smbd
    ```
 
-### 7. Configurar el Cortafuegos
+### 6. Configurar el Cortafuegos
 ```bash
 sudo ufw allow ssh
 sudo ufw allow Samba
@@ -107,13 +101,13 @@ sudo ufw enable
 
 ## 🧪 Pruebas del Funcionamiento
 
-### 8.1. Probar desde la VM
+### 7.1. Probar desde la VM
 ```bash
 smbclient //localhost/compartido -U alfonso
 smb:\> put /etc/hosts hosts.txt
 ```
 
-### 8.2. Probar desde Windows
+### 7.2. Probar desde Windows
 1. Presiona `Win + R` e introduce:
    ```
    \\192.168.32.220\compartido
@@ -122,7 +116,7 @@ smb:\> put /etc/hosts hosts.txt
    - **Usuario**: `alfonso`
    - **Contraseña**: (la definida en el paso 5)
 
-### 8.3. Probar desde Linux/macOS
+### 7.3. Probar desde Linux/macOS
 ```bash
 smbclient //192.168.32.220/compartido -U alfonso
 ```
