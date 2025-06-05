@@ -1,4 +1,4 @@
-# Servidor Samba con Autenticación (Ubuntu Server 22.04 + VMware)
+# Servidor Samba con Autenticación (ubuntu-24.04.2-desktop-amd64.iso + VMware)
 
 Guía paso a paso para configurar un recurso compartido seguro con autenticación por usuario/contraseña, accesible desde Windows, macOS y Linux.
 
@@ -19,7 +19,7 @@ Guía paso a paso para configurar un recurso compartido seguro con autenticació
 
 ### 1. Crear y Configurar la Máquina Virtual
 1. En VMware, selecciona **Archivo > Nueva Máquina Virtual > Típica**.
-2. Usa la ISO **ubuntu-server-22.04.iso** y configura el sistema operativo como **Ubuntu 64-bit**.
+2. Usa la ISO **ubuntu-24.04.2-desktop-amd64.iso** y configura el sistema operativo como **Ubuntu 64-bit**.
 3. Personaliza el hardware: Configura el **Adaptador de Red** en **Modo Puente**.
 4. En **Editar > Editor de Red Virtual**, asigna **VMnet0** al adaptador físico de tu PC (Wi-Fi/Ethernet).
 
